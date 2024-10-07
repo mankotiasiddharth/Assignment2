@@ -30,7 +30,6 @@ legoData
             })   
     });
     app.get("/lego/sets/theme-demo",(req,res)=>{
-        console.log("hello")
         legoData.getSetsByTheme("tech").then((set)=>{
             console.log(set)
             res.json(set);
@@ -38,9 +37,7 @@ legoData
             res.status(404).send(err);
         })
     })
-    app.get('/*',(req,res)=>{
-        res.send('fucked')
-    })
+    
     
     app.get("/lego/sets/num-demo",(req,res)=>{
         legoData.getSetByNum("01-1").then((set)=>{
